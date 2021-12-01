@@ -55,7 +55,7 @@ async function main() {
 	// TODO: Optimizing the static/donors.jpg image should probably get automated as well
 	console.log('remember to additionally optimize the resulting /static/donors.jpg image file via e.g. https://squoosh.app ');
 
-	const str = `[\n\t${included.map(a => `${JSON.stringify(a.backer.name)}`).join(',\n\t')}\n]`;
+	const str = `[\n\t${included.map(a => `${JSON.stringify({ name: a.backer.name, website: a.backer.website })}`).join(',\n\t')}\n]`;
 
 	fs.writeFileSync(outputFile, `export default ${str};`);
 }

@@ -20,8 +20,8 @@
 	<a
 		class="donor"
 		style="background-position: {(100 * i) / (donors.length - 1)}% 0"
-		alt="{donor}"
-		href="https://opencollective.com/svelte">
-		{donor}
+		alt="{donor.name}"
+		href="{donor.website || 'https://opencollective.com/svelte'}">
+		{donor.name}
 	</a>
 {/each}
